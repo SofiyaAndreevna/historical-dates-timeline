@@ -1,0 +1,23 @@
+@import '@/shared/styles/variables';
+
+.period-counter {
+  font-size: $font-size-base;
+  font-weight: 400;
+  color: $text-color;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &__current {
+    font-weight: 400;
+  }
+
+  &__separator {
+    opacity: 0.5;
+  }
+
+  &__total {
+    opacity: 0.5;
+  }
+}
+

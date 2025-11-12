@@ -1,0 +1,35 @@
+@import '@/shared/styles/variables';
+
+.navigation-buttons {
+  display: flex;
+  gap: $spacing-sm;
+
+  &__button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba($border-color, 0.5);
+    border-radius: 50%;
+    background: transparent;
+    color: $text-color;
+    cursor: pointer;
+    transition: all $transition-base;
+
+    &:hover:not(:disabled) {
+      background: $white;
+      border-color: $text-color;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.3;
+    }
+
+    svg {
+      stroke: currentColor;
+    }
+  }
+}
+

@@ -1,0 +1,26 @@
+@import '@/shared/styles/variables';
+
+.years-display {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 120px;
+  pointer-events: none;
+
+  &__year {
+    font-size: $font-size-year;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+
+    &--start {
+      color: $primary-color;
+    }
+
+    &--end {
+      color: $secondary-color;
+    }
+  }
+}
+
