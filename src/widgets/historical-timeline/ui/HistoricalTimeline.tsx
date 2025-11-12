@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { TimelineData } from '@/entities/timeline';
 import {
   CircleNavigation,
@@ -25,9 +25,6 @@ export const HistoricalTimeline: React.FC<HistoricalTimelineProps> = ({ data }) 
     canGoPrevious,
     canGoNext,
   } = usePeriodNavigation(totalPeriods);
-
-  const prevButtonRef = useRef<HTMLButtonElement>(null);
-  const nextButtonRef = useRef<HTMLButtonElement>(null);
 
   const currentPeriod = data.periods[activePeriod];
 
@@ -66,16 +63,12 @@ export const HistoricalTimeline: React.FC<HistoricalTimelineProps> = ({ data }) 
             onNext={goToNext}
             isPreviousDisabled={!canGoPrevious}
             isNextDisabled={!canGoNext}
-            prevButtonRef={prevButtonRef}
-            nextButtonRef={nextButtonRef}
           />
         </div>
 
         <EventsSlider
           events={currentPeriod.events}
           resetKey={activePeriod}
-          prevButtonRef={prevButtonRef}
-          nextButtonRef={nextButtonRef}
         />
       </div>
     </div>

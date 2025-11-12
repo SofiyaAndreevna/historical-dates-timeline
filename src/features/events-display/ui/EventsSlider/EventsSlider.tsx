@@ -11,15 +11,11 @@ import './EventsSlider.scss';
 export interface EventsSliderProps {
   events: TimelineEvent[];
   resetKey: number;
-  prevButtonRef?: React.RefObject<HTMLButtonElement>;
-  nextButtonRef?: React.RefObject<HTMLButtonElement>;
 }
 
 export const EventsSlider: React.FC<EventsSliderProps> = ({
   events,
   resetKey,
-  prevButtonRef,
-  nextButtonRef,
 }) => {
   const { swiper } = TIMELINE_CONFIG;
 
@@ -29,10 +25,7 @@ export const EventsSlider: React.FC<EventsSliderProps> = ({
         modules={[Navigation]}
         spaceBetween={swiper.spaceBetween}
         slidesPerView={swiper.slidesPerView}
-        navigation={{
-          prevEl: prevButtonRef?.current,
-          nextEl: nextButtonRef?.current,
-        }}
+        navigation={true}
         breakpoints={{
           [swiper.breakpoints.mobile.width]: {
             slidesPerView: swiper.breakpoints.mobile.slidesPerView,

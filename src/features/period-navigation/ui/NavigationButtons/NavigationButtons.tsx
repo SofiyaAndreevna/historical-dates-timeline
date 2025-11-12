@@ -6,8 +6,6 @@ export interface NavigationButtonsProps {
   onNext: () => void;
   isPreviousDisabled: boolean;
   isNextDisabled: boolean;
-  prevButtonRef?: React.RefObject<HTMLButtonElement>;
-  nextButtonRef?: React.RefObject<HTMLButtonElement>;
 }
 
 export const NavigationButtons: React.FC<NavigationButtonsProps> = ({
@@ -15,13 +13,10 @@ export const NavigationButtons: React.FC<NavigationButtonsProps> = ({
   onNext,
   isPreviousDisabled,
   isNextDisabled,
-  prevButtonRef,
-  nextButtonRef,
 }) => {
   return (
     <div className="navigation-buttons">
       <button
-        ref={prevButtonRef}
         className="navigation-buttons__button"
         onClick={onPrevious}
         disabled={isPreviousDisabled}
@@ -32,7 +27,6 @@ export const NavigationButtons: React.FC<NavigationButtonsProps> = ({
         </svg>
       </button>
       <button
-        ref={nextButtonRef}
         className="navigation-buttons__button"
         onClick={onNext}
         disabled={isNextDisabled}

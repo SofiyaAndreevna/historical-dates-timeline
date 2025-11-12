@@ -16,11 +16,11 @@ export const usePeriodNavigation = (
   const [activePeriod, setActivePeriod] = useState(initialPeriod);
 
   const goToNext = useCallback(() => {
-    setActivePeriod((prev) => (prev < totalPeriods - 1 ? prev + 1 : 0));
+    setActivePeriod((prev) => (prev < totalPeriods - 1 ? prev + 1 : prev));
   }, [totalPeriods]);
 
   const goToPrevious = useCallback(() => {
-    setActivePeriod((prev) => (prev > 0 ? prev - 1 : totalPeriods - 1));
+    setActivePeriod((prev) => (prev > 0 ? prev - 1 : prev));
   }, [totalPeriods]);
 
   const goToPeriod = useCallback((index: number) => {
