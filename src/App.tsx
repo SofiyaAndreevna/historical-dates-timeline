@@ -1,6 +1,6 @@
 import React from 'react';
-import { timelineData } from './data/timelineData';
 import { HistoricalTimeline } from '@/widgets/historical-timeline';
+import { timelineData } from '@/entities/timeline';
 
 const App: React.FC = () => {
   return (
