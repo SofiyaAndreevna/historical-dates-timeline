@@ -1,0 +1,22 @@
+@import '@/shared/styles/variables';
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  &__year {
+    font-size: 25px;
+    font-weight: 400;
+    color: $primary-color;
+    line-height: 1.2;
+  }
+
+  &__description {
+    font-size: $font-size-large;
+    font-weight: 400;
+    color: $text-color;
+    line-height: 1.5;
+  }
+}
+
