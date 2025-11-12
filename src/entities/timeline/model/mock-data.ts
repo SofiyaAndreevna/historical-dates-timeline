@@ -1,4 +1,4 @@
-import { TimelineData } from '../types';
+import { TimelineData } from './types';
 
 export const timelineData: TimelineData = {
   periods: [
