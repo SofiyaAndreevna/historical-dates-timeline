@@ -1,0 +1,28 @@
+@import '@/shared/styles/variables';
+
+.period-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $text-color;
+    opacity: 0.4;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity $transition-base;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &--active {
+      opacity: 1;
+    }
+  }
+}
+
