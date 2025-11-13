@@ -3,6 +3,7 @@
 .events-slider {
   width: 100%;
   margin-top: $spacing-lg;
+  position: relative;
 
   .swiper {
     width: 100%;
@@ -11,6 +12,51 @@
 
   .swiper-slide {
     height: auto;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(56, 119, 238, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all $transition-base;
+    z-index: 10;
+
+    svg {
+      display: block;
+      flex-shrink: 0;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: #f8f9fb;
+      box-shadow: 0 0 20px rgba(56, 119, 238, 0.15);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      svg path {
+        stroke: #42567A;
+      }
+    }
+
+    &--prev {
+      left: -60px;
+    }
+
+    &--next {
+      right: -60px;
+    }
   }
 }
 
