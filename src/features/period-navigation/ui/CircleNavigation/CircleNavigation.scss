@@ -14,10 +14,33 @@
     position: absolute;
     left: 50%;
     top: 50%;
+    width: 1px;
+    height: 200vh;
+    background: rgba($border-color, 0.2);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100vw;
+    height: 1px;
+    background: rgba($border-color, 0.2);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  &__border {
+    position: absolute;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
     width: 530px;
     height: 530px;
-    border: 1px solid rgba($border-color, 0.5);
+    border: 1px solid rgba($border-color, 0.3);
     border-radius: 50%;
   }
 
@@ -116,7 +139,7 @@
     width: 400px;
     height: 400px;
 
-    &::before {
+    &__border {
       width: 400px;
       height: 400px;
     }

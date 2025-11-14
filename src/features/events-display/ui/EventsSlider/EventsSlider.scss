@@ -3,6 +3,7 @@
 .events-slider {
   width: 100%;
   margin-top: $spacing-lg;
+  padding-left: 78px;
   position: relative;
 
   .swiper {
@@ -52,13 +53,23 @@
       box-shadow: 0 0 20px rgba(56, 119, 238, 0.15);
     }
 
+    svg path {
+      stroke: $accent-color;
+    }
+
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
 
       svg path {
-        stroke: #42567A;
+        stroke: $text-color;
       }
+    }
+
+    &--hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
     }
 
     &--prev {
@@ -72,7 +83,8 @@
 
   @media (max-width: 768px) {
     margin-top: 0;
-    padding: 0 20px 0 0;
+    padding-left: 0;
+    padding-right: 20px;
 
     .swiper {
       padding: 15px 0 15px 20px;
@@ -89,7 +101,8 @@
   }
 
   @media (max-width: 480px) {
-    padding: 0 20px 0 0;
+    padding-left: 0;
+    padding-right: 20px;
 
     .swiper {
       padding: 15px 0 15px 20px;

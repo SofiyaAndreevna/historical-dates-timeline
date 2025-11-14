@@ -33,7 +33,7 @@ export const EventsSlider: React.FC<EventsSliderProps> = ({
   return (
     <div className="events-slider">
       <button
-        className="events-slider__nav events-slider__nav--prev"
+        className={`events-slider__nav events-slider__nav--prev ${isBeginning ? 'events-slider__nav--hidden' : ''}`}
         onClick={handlePrev}
         disabled={isBeginning}
         aria-label="Previous slide"
@@ -86,7 +86,7 @@ export const EventsSlider: React.FC<EventsSliderProps> = ({
       </Swiper>
       
       <button
-        className="events-slider__nav events-slider__nav--next"
+        className={`events-slider__nav events-slider__nav--next ${isEnd ? 'events-slider__nav--hidden' : ''}`}
         onClick={handleNext}
         disabled={isEnd}
         aria-label="Next slide"

@@ -6,28 +6,6 @@
   padding: 170px 80px 104px;
   position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: $border-color;
-    transform: translateX(-50%);
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    height: 1px;
-    background: $border-color;
-    transform: translateY(-50%);
-  }
-
   &__container {
     position: relative;
     z-index: 1;
@@ -154,7 +132,7 @@
     &__divider {
       display: block;
       height: 1px;
-      background: $border-color;
+      background: rgba($border-color, 0.1);
       flex-shrink: 0;
     }
 

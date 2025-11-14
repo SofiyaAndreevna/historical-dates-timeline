@@ -29,6 +29,7 @@ export const CircleNavigation: React.FC<CircleNavigationProps> = ({
 
   return (
     <div className="circle-navigation">
+      <div className="circle-navigation__border"></div>
       <div className="circle-navigation__circle" ref={circleRef}>
         {periods.map((period, index) => {
           const { x, y } = calculatePointPosition(index, totalPeriods);
