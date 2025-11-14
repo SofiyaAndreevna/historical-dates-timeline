@@ -111,5 +111,19 @@
     opacity: 0;
     transition: opacity $transition-base;
   }
+
+  @media (max-width: 1024px) {
+    width: 400px;
+    height: 400px;
+
+    &::before {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 

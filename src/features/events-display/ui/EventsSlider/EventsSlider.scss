@@ -12,6 +12,17 @@
 
   .swiper-slide {
     height: auto;
+    transition: opacity $transition-base;
+  }
+
+  @media (max-width: 768px) {
+    .swiper-slide {
+      opacity: 0.4;
+    }
+
+    .swiper-slide-active {
+      opacity: 1;
+    }
   }
 
   &__nav {
@@ -56,6 +67,37 @@
 
     &--next {
       right: -60px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+    padding: 0 20px 0 0;
+
+    .swiper {
+      padding: 15px 0 15px 20px;
+      margin-left: 0;
+    }
+
+    .swiper-wrapper {
+      padding-left: 0;
+    }
+
+    &__nav {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 20px 0 0;
+
+    .swiper {
+      padding: 15px 0 15px 20px;
+      margin-left: 0;
+    }
+
+    .swiper-wrapper {
+      padding-left: 0;
     }
   }
 }

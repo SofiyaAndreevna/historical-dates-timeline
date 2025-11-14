@@ -31,5 +31,19 @@
       stroke: currentColor;
     }
   }
+
+  @media (max-width: 768px) {
+    gap: 8px;
+
+    &__button {
+      width: 25px;
+      height: 25px;
+
+      svg {
+        width: 6px;
+        height: 8px;
+      }
+    }
+  }
 }
 

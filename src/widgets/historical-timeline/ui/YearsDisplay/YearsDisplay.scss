@@ -22,5 +22,29 @@
       color: $secondary-color;
     }
   }
+
+  @media (max-width: 1024px) {
+    gap: 80px;
+
+    &__year {
+      font-size: 150px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    gap: 30px;
+
+    &__year {
+      font-size: 56px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    gap: 20px;
+
+    &__year {
+      font-size: 56px;
+    }
+  }
 }
 

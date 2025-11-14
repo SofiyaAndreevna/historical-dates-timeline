@@ -47,6 +47,7 @@ export const EventsSlider: React.FC<EventsSliderProps> = ({
         modules={[Navigation]}
         spaceBetween={swiper.spaceBetween}
         slidesPerView={swiper.slidesPerView}
+        centeredSlides={false}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
           setIsBeginning(swiper.isBeginning);
@@ -58,16 +59,21 @@ export const EventsSlider: React.FC<EventsSliderProps> = ({
         }}
         breakpoints={{
           [swiper.breakpoints.mobile.width]: {
-            slidesPerView: swiper.breakpoints.mobile.slidesPerView,
+            slidesPerView: 1.5,
             spaceBetween: swiper.breakpoints.mobile.spaceBetween,
+            centeredSlides: false,
+            slidesOffsetBefore: 0,
+            slidesOffsetAfter: 0,
           },
           [swiper.breakpoints.tablet.width]: {
             slidesPerView: swiper.breakpoints.tablet.slidesPerView,
             spaceBetween: swiper.breakpoints.tablet.spaceBetween,
+            centeredSlides: false,
           },
           [swiper.breakpoints.desktop.width]: {
             slidesPerView: swiper.breakpoints.desktop.slidesPerView,
             spaceBetween: swiper.breakpoints.desktop.spaceBetween,
+            centeredSlides: false,
           },
         }}
         key={resetKey}

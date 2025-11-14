@@ -4,6 +4,7 @@ import {
   CircleNavigation,
   NavigationButtons,
   PeriodCounter,
+  PeriodDots,
   usePeriodNavigation,
 } from '@/features/period-navigation';
 import { EventsSlider } from '@/features/events-display';
@@ -66,10 +67,32 @@ export const HistoricalTimeline: React.FC<HistoricalTimelineProps> = ({ data }) 
           />
         </div>
 
+        <div className="historical-timeline__divider"></div>
+
         <EventsSlider
           events={currentPeriod.events}
           resetKey={activePeriod}
         />
+
+        <div className="historical-timeline__mobile-navigation">
+          <div className="historical-timeline__mobile-nav-left">
+            <PeriodCounter
+              currentPeriod={activePeriod}
+              totalPeriods={totalPeriods}
+            />
+            <NavigationButtons
+              onPrevious={goToPrevious}
+              onNext={goToNext}
+              isPreviousDisabled={!canGoPrevious}
+              isNextDisabled={!canGoNext}
+            />
+          </div>
+          <PeriodDots
+            totalPeriods={totalPeriods}
+            activePeriod={activePeriod}
+            onPeriodChange={goToPeriod}
+          />
+        </div>
       </div>
     </div>
   );
