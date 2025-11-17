@@ -1,4 +1,4 @@
-@import '@/shared/styles/variables';
+@use 'shared/styles/variables' as *;
 
 .period-counter {
   font-size: $font-size-base;

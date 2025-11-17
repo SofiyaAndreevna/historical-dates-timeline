@@ -1,4 +1,4 @@
-@import '@/shared/styles/variables';
+@use 'shared/styles/variables' as *;
 
 .historical-timeline {
   max-width: 1440px;

@@ -1,5 +1,7 @@
-@import './variables';
-@import './reset';
+@forward './variables';
+@forward './reset';
+
+@use './variables' as *;
 
 body {
   font-family: $font-family;
