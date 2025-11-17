@@ -132,7 +132,7 @@
     &__divider {
       display: block;
       height: 1px;
-      background: rgba($border-color, 0.1);
+      background: $divider-color;
       flex-shrink: 0;
     }
 
@@ -168,6 +168,10 @@
     &__mobile-navigation {
       padding: 0 20px;
       padding-top: 20px;
+    }
+
+    &__border-line {
+      display: none;
     }
   }
 }

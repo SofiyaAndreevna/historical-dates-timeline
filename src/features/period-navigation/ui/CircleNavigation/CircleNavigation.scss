@@ -95,10 +95,6 @@
       .circle-navigation__point-number {
         opacity: 1;
       }
-
-      .circle-navigation__point-label {
-        opacity: 1;
-      }
     }
   }
 
@@ -133,6 +129,10 @@
     white-space: nowrap;
     opacity: 0;
     transition: opacity $transition-base;
+
+    &--visible {
+      opacity: 1;
+    }
   }
 
   @media (max-width: 1024px) {

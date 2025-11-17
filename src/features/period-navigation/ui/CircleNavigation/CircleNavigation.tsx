@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { TimelinePeriod, calculatePointPosition } from '@/entities/timeline';
 import { animateCircleRotation, calculateCompensationAngle } from '@/shared/lib';
+import { ANIMATION_CONFIG } from '@/shared/config';
 import './CircleNavigation.scss';
 
 export interface CircleNavigationProps {
@@ -16,10 +17,19 @@ export const CircleNavigation: React.FC<CircleNavigationProps> = ({
 }) => {
   const circleRef = useRef<HTMLDivElement>(null);
   const totalPeriods = periods.length;
+  const [visibleLabelPeriod, setVisibleLabelPeriod] = useState<number | null>(0);
 
   useEffect(() => {
     if (circleRef.current) {
+      setVisibleLabelPeriod(null);
+      
       animateCircleRotation(circleRef.current, activePeriod, totalPeriods);
+      
+      const timer = setTimeout(() => {
+        setVisibleLabelPeriod(activePeriod);
+      }, ANIMATION_CONFIG.circleRotation.duration * 1000);
+      
+      return () => clearTimeout(timer);
     }
   }, [activePeriod, totalPeriods]);
 
@@ -55,7 +65,13 @@ export const CircleNavigation: React.FC<CircleNavigationProps> = ({
               >
                 <span className="circle-navigation__point-number">{index + 1}</span>
                 {index === activePeriod && (
-                  <span className="circle-navigation__point-label">{period.category}</span>
+                  <span 
+                    className={`circle-navigation__point-label ${
+                      visibleLabelPeriod === index ? 'circle-navigation__point-label--visible' : ''
+                    }`}
+                  >
+                    {period.category}
+                  </span>
                 )}
               </div>
             </div>
